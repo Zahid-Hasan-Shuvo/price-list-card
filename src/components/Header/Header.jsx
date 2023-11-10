@@ -35,14 +35,14 @@ const Header = () => {
         }
     ]
     return (
-       <div>
+       <div className='text-left '>
         
       <div onClick={()=>setOpen(!open)} className='md:hidden'>  
        
       <span>{open===true?  <FontAwesomeIcon icon={faXmark} />: <FontAwesomeIcon icon={faBars} />}</span>
       </div>
       
-        <nav className='md:flex flex-row justify-evenly'>
+        <nav className={`md:flex flex-row justify-evenly absolute md:static duration-500 ${open? 'top-12':'-top-36' } `}>
         
             {
                 routes.map(route=> <Link key={route.id} route={route}></Link>)
